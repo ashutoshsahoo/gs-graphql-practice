@@ -1,0 +1,39 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.0.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	//id 'org.jetbrains.kotlin.jvm' version '1.3.70'
+	id 'java'
+}
+
+group = 'in.ashu.practice'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1'
+	runtimeOnly 'com.graphql-java-kickstart:playground-spring-boot-starter:7.0.1'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:7.0.1'
+}
+
+test {
+	useJUnitPlatform()
+}
