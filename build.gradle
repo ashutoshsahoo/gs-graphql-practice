@@ -3,11 +3,24 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	//id 'org.jetbrains.kotlin.jvm' version '1.3.70'
 	id 'java'
+	id 'com.google.cloud.tools.jib' version '2.3.0'
 }
 
 group = 'in.ashu.practice'
 version = '1.0.0'
 sourceCompatibility = '11'
+
+jib {
+	to {
+		image = 'ashutoshsahoo/gs-graphql'
+		tags = [ version, 'latest']
+	}
+	container {
+    ports = ['8080']
+    labels = [user:'ashutoshsahoo', app: project.name]
+  }
+}
+
 
 configurations {
 	compileOnly {
