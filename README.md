@@ -10,14 +10,14 @@
 
 ```graphql
 mutation {
-  createVehicle(
-    type: "car"
-    modelCode: "XYZ0192"
-    brandName: "XYZ"
-    launchDate: "2020-05-21"
-  ) {
-    id
-  }
+	createVehicle(
+		type: "car"
+		modelCode: "XYZ0192"
+		brandName: "XYZ"
+		launchDate: "2020-05-21"
+	) {
+		id
+	}
 }
 ```
 
@@ -25,13 +25,13 @@ mutation {
 
 ```graphql
 query {
-  vehicles(count: 1) {
-    id
-    type
-    modelCode
-    brandName
-    launchDate
-  }
+	vehicles(count: 1) {
+		id
+		type
+		modelCode
+		brandName
+		launchDate
+	}
 }
 ```
 

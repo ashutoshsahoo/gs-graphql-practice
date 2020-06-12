@@ -16,9 +16,9 @@ jib {
 		tags = [ version, 'latest']
 	}
 	container {
-    ports = ['8080']
-    labels = [user:'ashutoshsahoo', app: project.name]
-  }
+    	ports = ['8080']
+    	labels = [user:'ashutoshsahoo', app: project.name]
+  	}
 }
 
 
