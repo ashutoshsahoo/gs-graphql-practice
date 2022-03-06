@@ -1,3 +1,14 @@
-graphql.playground:
-    mapping: /
-    pageTitle: GraphQL Playground
+spring:
+  graphql:
+    schema:
+      printer:
+        enabled: true
+    graphiql:
+      enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
